@@ -4,14 +4,14 @@ public class HabitacionOcupadaVacia implements HabitacionEstado {
 
 	@Override
 	public HabitacionEstado ocupar() {
-		System.out.println("Bienvenidos a vuestra habitacion");
+		System.out.println("La habitacion ha cambiado de estado");
 		return new HabitacionOcupada();
 	}
 
 	@Override
 	public HabitacionEstado liberar() {
 		System.out.println("La habitacion no ha cambiado de estado");
-		return this;
+		return new HabitacionLimpieza();
 	}
 
 	@Override
@@ -22,8 +22,8 @@ public class HabitacionOcupadaVacia implements HabitacionEstado {
 
 	@Override
 	public HabitacionEstado salir() {
-		System.out.println("La habitacion no ha cambiado de estado");
-		return this;
+		System.out.println("La habitacion ha cambiado de estado");
+		return new HabitacionOcupadaVacia();
 	}
 
 }
